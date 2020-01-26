@@ -25,21 +25,27 @@ def read_configuration_file():
     except (IOError, configparser.Error):
         return dict()
 
+
 def intent_callback_scenerey(hermes, intent_message):
     print('erstelle intent_callback_scenerey')
     hermes.publish_end_session(intent_message.session_id, "intent_callback_scenerey")
 
+
 def intent_callback_dimm_lights(hermes, intent_message):
     hermes.publish_end_session(intent_message.session_id, "Licht dimmen")
+
 
 def intent_callback_lights_off(hermes, intent_message):
     hermes.publish_end_session(intent_message.session_id, "licht aus")
 
+
 def intent_callback_lights_on(hermes, intent_message):
     hermes.publish_end_session(intent_message.session_id, "licht an")
 
+
 def intent_callback_change_color(hermes, intent_message):
     hermes.publish_end_session(intent_message.session_id, "licht farbwechsel")
+
 
 
 if __name__ == "__main__":
